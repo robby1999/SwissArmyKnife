@@ -7,8 +7,33 @@ class Metronome extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            note: " ",
         };
 
+    }
+
+    lowEToggle= () => {
+        this.setState({ note: 1 });
+    }
+
+    aToggle= () => {
+        this.setState({ note: 2 });
+    }
+
+    dToggle= () => {
+        this.setState({ note: 3 });
+    }
+
+    gToggle= () => {
+        this.setState({ note: 4 });
+    }
+
+    bToggle= () => {
+        this.setState({ note: 5 });
+    }
+
+    highEToggle= () => {
+        this.setState({ note: 6 });
     }
 
     async componentDidMount() {
@@ -20,75 +45,104 @@ class Metronome extends Component {
         });
     }
 
-    startStop = async () => {
-        if(this.state.playing) {
-            clearInterval(this.timer);
-            this.setState({
-                playing: false
-            });
-        } else {
-            this.timer = setInterval(this.playClick, (60 / this.state.bpm) * 1000);
-            this.setState({
-                count: 0,
-                playing: true
-            }, this.playClick);
-        }
-    }
-
-    playClick = async () => {
-      const { count, beatsPerMeasure } = this.state;
+    playSound = async () => {
       const sound = new Audio.Sound();
-      // The first beat will have a different sound than the others
-      if(count % beatsPerMeasure === 0) {
-        try {
-            await sound.loadAsync(require('../sounds/click2.wav'));
-            await sound.playAsync();
-            this.sound.setPositionAsync(0);
-            await sound.unloadAsync();
-        } catch (error) {
-            // Error occurred
-        }
-      } else {
-        try {
-            await sound.loadAsync(require('../sounds/click1.wav'));
-            await sound.playAsync();
-            this.sound.setPositionAsync(0);
-            await sound.unloadAsync();
-        } catch (error) {
-            // Error occurred
-        }
+      // Determine what sound to play
+      switch(this.state.note) {
+        case 1 :
+            try {
+                await sound.loadAsync(require('../sounds/lowE.wav'));
+                await sound.playAsync();
+                this.sound.setPositionAsync(0);
+                await sound.unloadAsync();
+            } catch (error) {
+                // Error occurred
+            }
+        case 2 :
+            try {
+                await sound.loadAsync(require('../sounds/A.wav'));
+                await sound.playAsync();
+                this.sound.setPositionAsync(0);
+                await sound.unloadAsync();
+            } catch (error) {
+                // Error occurred
+            }
+        case 3 :
+            try {
+                await sound.loadAsync(require('../sounds/D.wav'));
+                await sound.playAsync();
+                this.sound.setPositionAsync(0);
+                await sound.unloadAsync();
+            } catch (error) {
+                // Error occurred
+            }
+        case 4 :
+            try {
+                await sound.loadAsync(require('../sounds/G.wav'));
+                await sound.playAsync();
+                this.sound.setPositionAsync(0);
+                await sound.unloadAsync();
+            } catch (error) {
+                // Error occurred
+            }
+        case 5 :
+            try {
+                await sound.loadAsync(require('../sounds/B.wav'));
+                await sound.playAsync();
+                this.sound.setPositionAsync(0);
+                await sound.unloadAsync();
+            } catch (error) {
+                // Error occurred
+            }
+        case 6 :
+            try {
+                await sound.loadAsync(require('../sounds/highE.wav'));
+                await sound.playAsync();
+                this.sound.setPositionAsync(0);
+                await sound.unloadAsync();
+            } catch (error) {
+                // Error occurred
+            }
       }
-      // Keep track of which beat we're on
-      this.setState(state => ({
-        count: (state.count + 1) % state.beatsPerMeasure
-      }));
-    }
-
-    handleBpmChange = event => {
-        const newBpm = event.target.value;
-
-        if(this.state.playing) {
-            clearInterval(this.timer);
-            this.timer = setInterval(this.playClick, (60 / newBpm) * 1000);
-
-            this.setState({
-                count: 0,
-                bpm: newBpm
-            });
-        } else {
-            this.setState({ bpm: newBpm });
-        }
     }
 
     render() {
-        const { playing, bpm} = this.state;
-
         return (
-            <View style={styles.metronome}>
+            <View style={styles.container}>
                 <Text style={styles.logo}>Tuner</Text>
+                <TouchableOpacity onPressIn={this.lowEToggle}
+                    onPress={this.playSound}
+                    style={styles.LowEButton}>
+                    <Text style={styles.buttonText}>Low E</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPressIn={this.aToggle}
+                    onPress={this.playSound}
+                    style={styles.AButton}>
+                    <Text style={styles.buttonText}>A</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPressIn={this.dToggle}
+                    onPress={this.playSound}
+                    style={styles.DButton}>
+                    <Text style={styles.buttonText}>D</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPressIn={this.gToggle}
+                    onPress={this.playSound}
+                    style={styles.GButton}>
+                    <Text style={styles.buttonText}>G</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPressIn={this.bToggle}
+                    onPress={this.playSound}
+                    style={styles.BButton}>
+                    <Text style={styles.buttonText}>B</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPressIn={this.highEToggle}
+                    onPress={this.playSound}
+                    style={styles.HighEButton}>
+                    <Text style={styles.buttonText}>High E</Text>
+                </TouchableOpacity>
                 <TouchableOpacity  onPress={ () => this.props.navigation.navigate('Home')}
-                  style={styles.Button}>
-                  <Text style={styles.buttonText}>Back</Text>
+                    style={styles.Button}>
+                    <Text style={styles.buttonText}>Back</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -96,35 +150,22 @@ class Metronome extends Component {
 }
 
 const styles = StyleSheet.create({
-metronome: {
-    textAlign: 'center',
-    margin: 'auto',
-    padding: 30,
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: "#690a38"
-},
-slider: {
-    width: 300,
-    opacity: 1,
-    height: 50,
-    marginBottom: 60,
-},
-text: {
-    fontSize: 20,
-    fontWeight:"bold",
-    textAlign: 'center',
-    fontWeight: '500',
-    margin: 20,
-    color:"#000000",
+container: {
+  textAlign: 'center',
+  margin: 'auto',
+  padding: 30,
+  flex: 1,
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: "#690a38"
 },
 logo:{
   fontWeight:"bold",
   fontSize: 40,
   color:"#000000",
-  marginBottom: 50,
   alignItems: 'center',
+  paddingTop: 50,
+  marginBottom: 50
 },
 Button:{
   width:"85%",
@@ -133,10 +174,63 @@ Button:{
   height:50,
   alignItems:"center",
   justifyContent:"center",
-  marginBottom:40
+  marginTop: 60
+},
+LowEButton:{
+  width:"85%",
+  backgroundColor:"#b5a642",
+  borderRadius:25,
+  height:50,
+  alignItems:"center",
+  justifyContent:"center",
+  marginBottom: 10
+},
+AButton:{
+  width:"85%",
+  backgroundColor:"#ff0800",
+  borderRadius:25,
+  height:50,
+  alignItems:"center",
+  justifyContent:"center",
+  marginBottom: 10
+},
+DButton:{
+  width:"85%",
+  backgroundColor:"#727472",
+  borderRadius:25,
+  height:50,
+  alignItems:"center",
+  justifyContent:"center",
+  marginBottom: 10
+},
+GButton:{
+  width:"85%",
+  backgroundColor:"#93E9BE",
+  borderRadius:25,
+  height:50,
+  alignItems:"center",
+  justifyContent:"center",
+  marginBottom: 10
+},
+BButton:{
+  width:"85%",
+  backgroundColor:"#f2c700",
+  borderRadius:25,
+  height:50,
+  alignItems:"center",
+  justifyContent:"center",
+  marginBottom: 10
+},
+HighEButton:{
+  width:"85%",
+  backgroundColor:"#2d5499",
+  borderRadius:25,
+  height:50,
+  alignItems:"center",
+  justifyContent:"center",
 },
 buttonText:{
-  color:"white",
+  color:"#000000",
   fontWeight:"bold",
 }
 });
