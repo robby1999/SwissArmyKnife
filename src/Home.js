@@ -3,33 +3,11 @@ import { StyleSheet, Text, View, TouchableOpacity, Linking } from 'react-native'
 
 class Home extends React.Component {
 
-//    UserProfileFunction = () =>{
-//        this.props.navigation.navigate('UserProfile', { ID: this.props.route.params.ID,
-//                                                        name: this.props.route.params.name,
-//                                                        email: this.props.route.params.email,
-//                                                        contactNo: this.props.route.params.contactNo,
-//                                                        DOB: this.props.route.params.DOB,
-//                                                        gender: this.props.route.params.gender,
-//                                                        address: this.props.route.params.address});
-//      }
-
-//    UpdateSymptomsFunction = () =>{
-//        this.props.navigation.navigate('HealthInformation', { ID: this.props.route.params.ID,
-//                                                           smoker: this.props.route.params.smoker,
-//                                                           pregnant: this.props.route.params.pregnant,
-//                                                           hospitalised: this.props.route.params.hospitalised,
-//                                                           cardioProblem: this.props.route.params.cardioProblem,
-//                                                           disability: this.props.route.params.disability,
-//                                                           cancerTreatment: this.props.route.params.cancerTreatment,
-//                                                           highRiskInfection: this.props.route.params.highRiskInfection,
-//                                                           covidSymptoms: this.props.route.params.covidSymptoms});
-//      }
-
 render(){
   return (
       <View style={styles.container}>
         <Text style={styles.logo}>Guitar Swiss Army knife</Text>
-        <TouchableOpacity  //onPress={this.UserProfileFunction}
+        <TouchableOpacity  onPress={ () => this.props.navigation.navigate('Tuner')}
           style={styles.Button}>
           <Text style={styles.buttonText}>Tuner</Text>
         </TouchableOpacity>
@@ -53,22 +31,25 @@ render(){
 
 const styles = StyleSheet.create({
 container: {
+  textAlign: 'center',
+  margin: 'auto',
+  padding: 30,
   flex: 1,
-  backgroundColor: '#00A9CE',
+  backgroundColor: '#690a38',
   alignItems: 'center',
   justifyContent: 'center',
 },
 logo:{
   fontWeight:"bold",
   fontSize: 40,
-  color:"#fb5b5a",
+  color:"#000000",
   marginBottom: 40,
-  marginLeft: 20,
   alignItems: 'center',
+  textAlign: 'center',
 },
 Button:{
-  width:"80%",
-  backgroundColor:"#fb5b5a",
+  width:"85%",
+  backgroundColor:"#ff7f17",
   borderRadius:25,
   height:50,
   alignItems:"center",

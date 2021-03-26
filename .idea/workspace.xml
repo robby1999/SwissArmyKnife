@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a0322402-4bcf-414b-a619-3bd794556193" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sounds/click1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/click2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tuner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Metronome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Metronome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Metronome.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1pLKNxUptpQGQXDnzNJyetdUwBx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RSM" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AndroidStudioProjects\SwissArmyKnife\src" />
+      <recent name="D:\AndroidStudioProjects\SwissArmyKnife\css" />
+      <recent name="D:\AndroidStudioProjects\SwissArmyKnife" />
+      <recent name="D:\AndroidStudioProjects\SwissArmyKnife\src\css" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0322402-4bcf-414b-a619-3bd794556193" name="Default Changelist" comment="" />
+      <created>1614956893826</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614956893826</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Work on Metronome started">
+      <created>1615573933271</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615573933272</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Work on Metronome started" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on Metronome started" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="93" y="93" width="1350" height="638" key="AVDManager" timestamp="1616755363036">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="AVDManager/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1616755363036" />
+    <state x="93" y="93" width="1350" height="638" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1616178631691" />
+    <state x="586" y="159" key="AndroidProcessChooserDialog" timestamp="1615560363412">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="159" key="AndroidProcessChooserDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1615560363412" />
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1616180722286">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1614959107344" />
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616180722286" />
+    <state x="633" y="310" width="550" height="203" key="Github.ShareDialog" timestamp="1614959334261">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="633" y="310" width="550" height="203" key="Github.ShareDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1614959334261" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1614959236962">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1614959236962" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1615573938279">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1615573938279" />
+    <state x="586" y="274" key="git4idea.rebase.GitRebaseDialog" timestamp="1614958797227">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="274" key="git4idea.rebase.GitRebaseDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1614958797227" />
+    <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1614958818836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="570" y="319" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1614958818836" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1616759664391">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1616759664391" />
+    <state x="561" y="271" key="scopes" timestamp="1615562850378">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="561" y="271" key="scopes/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1615562850378" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616763976458">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1616763976458" />
+  </component>
+</project>

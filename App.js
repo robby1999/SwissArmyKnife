@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/Home';
 import Metronome from './src/Metronome';
+import Tuner from './src/Tuner';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,10 @@ export default class App extends React.Component {
           <Stack.Screen
             name="Metronome"
             component={Metronome}
+          />
+          <Stack.Screen
+            name="Tuner"
+            component={Tuner}
           />
         </Stack.Navigator>
       </NavigationContainer>

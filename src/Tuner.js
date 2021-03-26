@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Slider from '@react-native-community/slider';
 import { Audio } from 'expo-av';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Linking, AppRegistry } from 'react-native';
 
@@ -8,11 +7,6 @@ class Metronome extends Component {
     constructor(props) {
         super(props);
         this.state = {
-        playing: false,
-        count: 0,
-        bpm: 120,
-        beatsPerMeasure: 4,
-        click: false,
         };
 
     }
@@ -91,24 +85,7 @@ class Metronome extends Component {
 
         return (
             <View style={styles.metronome}>
-                <Text style={styles.logo}>Metronome</Text>
-                <View style={styles.slider}>
-                    <Slider
-                        minimumValue={50}
-                        maximumValue={250}
-                        step={1}
-                        minimumTrackTintColor="#000000"
-                        thumbTintColor="#b9b6bf"
-                        value={this.state.bpm}
-                        onValueChange={bpm => this.setState({bpm: bpm})}
-                        //onChange={this.handleBpmChange}
-                    />
-                    <Text style={styles.text}>{this.state.bpm} BPM</Text>
-                </View>
-                <TouchableOpacity  onPress={this.startStop}
-                  style={styles.Button}>
-                  <Text style={styles.buttonText}>{(this.state.playing) ? "Stop" : "Play"}</Text>
-                </TouchableOpacity>
+                <Text style={styles.logo}>Tuner</Text>
                 <TouchableOpacity  onPress={ () => this.props.navigation.navigate('Home')}
                   style={styles.Button}>
                   <Text style={styles.buttonText}>Back</Text>
