@@ -140,9 +140,9 @@ class Metronome extends Component {
                     style={styles.HighEButton}>
                     <Text style={styles.buttonText}>High E</Text>
                 </TouchableOpacity>
-                <TouchableOpacity  onPress={ () => this.props.navigation.navigate('Home')}
+                <TouchableOpacity  onPress={ () => this.props.navigation.goBack()}
                     style={styles.Button}>
-                    <Text style={styles.buttonText}>Back</Text>
+                    <Text style={styles.backButtonText}>Back</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -231,6 +231,10 @@ HighEButton:{
 },
 buttonText:{
   color:"#000000",
+  fontWeight:"bold",
+},
+backButtonText:{
+  color:"white",
   fontWeight:"bold",
 }
 });

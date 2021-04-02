@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/Home';
 import Metronome from './src/Metronome';
 import Tuner from './src/Tuner';
+import Chords from './src/Chords';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,10 @@ export default class App extends React.Component {
           <Stack.Screen
             name="Tuner"
             component={Tuner}
+          />
+          <Stack.Screen
+            name="Chords"
+            component={Chords}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -109,7 +109,7 @@ class Metronome extends Component {
                   style={styles.Button}>
                   <Text style={styles.buttonText}>{(this.state.playing) ? "Stop" : "Play"}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity  onPress={ () => this.props.navigation.navigate('Home')}
+                <TouchableOpacity  onPress={ () => this.props.navigation.goBack()}
                   style={styles.Button}>
                   <Text style={styles.buttonText}>Back</Text>
                 </TouchableOpacity>

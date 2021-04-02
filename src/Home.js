@@ -15,7 +15,7 @@ render(){
           style={styles.Button}>
           <Text style={styles.buttonText}>Metronome</Text>
         </TouchableOpacity>
-        <TouchableOpacity  //onPress={ ()=> Linking.openURL('https://www.gov.uk/coronavirus')}
+        <TouchableOpacity  onPress={ ()=> this.props.navigation.navigate('Chords')}
           style={styles.Button}>
           <Text style={styles.buttonText}>Chords</Text>
         </TouchableOpacity>
