@@ -19,7 +19,7 @@ render(){
           style={styles.Button}>
           <Text style={styles.buttonText}>Chords</Text>
         </TouchableOpacity>
-        <TouchableOpacity  //onPress={ () => this.props.navigation.navigate('Login')}
+        <TouchableOpacity  onPress={ () => this.props.navigation.navigate('Scales')}
           style={styles.Button}>
           <Text style={styles.buttonText}>Scales</Text>
         </TouchableOpacity>

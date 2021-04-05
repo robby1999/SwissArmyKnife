@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Audio } from 'expo-av';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Linking, AppRegistry } from 'react-native';
 
-class Metronome extends Component {
+class Tuner extends Component {
 
     constructor(props) {
         super(props);
@@ -239,4 +239,4 @@ backButtonText:{
 }
 });
 
-export default Metronome;
+export default Tuner;

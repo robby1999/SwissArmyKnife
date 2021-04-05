@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Linking, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Linking, Image, ScrollView } from 'react-native';
 import SegmentedPicker from 'react-native-segmented-picker';
 
-class Chords extends React.Component {
+class Scales extends React.Component {
   segmentedPicker: React.RefObject<SegmentedPicker> = React.createRef();
   constructor(props) {
     super(props);
@@ -10,33 +10,33 @@ class Chords extends React.Component {
     this.state = {
         options: [
             {
-                key: 'note',
+                key: 'type',
                 items: [
-                    { label: 'A', value: 'A' },
-                    { label: 'A#/Bb', value: 'Bb' },
-                    { label: 'B', value: 'B' },
-                    { label: 'C', value: 'C' },
-                    { label: 'C#/Db', value: 'Db' },
-                    { label: 'D', value: 'D' },
-                    { label: 'D#/Eb', value: 'Eb' },
-                    { label: 'E', value: 'E' },
-                    { label: 'F', value: 'F' },
-                    { label: 'F#/Gb', value: 'Gb' },
-                    { label: 'G', value: 'G' },
-                    { label: 'G#/Ab', value: 'Ab' },
+                    { label: 'Minor', value: 'minor' },
+                    { label: 'Major', value: 'major' },
                 ],
             },
             {
-                key: 'type',
+                key: 'scale',
                 items: [
-                    { label: 'Major', value: 'Major' },
-                    { label: 'Minor', value: 'Minor' },
+                    { label: 'Pentatonic', value: 'pentatonic' },
+                ],
+            },
+            {
+                key: 'shape',
+                items: [
+                    { label: 'Shape 1', value: '1' },
+                    { label: 'Shape 2', value: '2' },
+                    { label: 'Shape 3', value: '3' },
+                    { label: 'Shape 4', value: '4' },
+                    { label: 'Shape 5', value: '5' },
+                    { label: 'Full Board', value: 'full' },
                 ],
             },
         ],
-        imgSource: require('../img/Major/A.png'),
+        imgSource: require('../img/MinorPent/Shape1.png'),
         selections: {},
-        name: "A Major"
+        name: "Minor Pentatonic Shape One"
     };
   }
 
@@ -46,50 +46,50 @@ class Chords extends React.Component {
 
   onConfirm = (selections: Selections) => {
     this.setState({ selections })
-    console.info(selections.note + selections.type);
-    if (selections.note + selections.type == "AMajor") {
-        this.setState({ imgSource: require('../img/Major/A.png') });
-        this.setState({ name: "A Major" });
+    console.info(selections.type + selections.scale + selections.shape);
+    if (selections.type + selections.scale + selections.shape == "minorpentatonic1") {
+        this.setState({ imgSource: require('../img/MinorPent/Shape1.png') });
+        this.setState({ name: "Minor Pentatonic Shape One" });
     }
-    else if (selections.note + selections.type == "BbMajor") {
-        this.setState({ imgSource: require('../img/Major/Bb.png') });
-        this.setState({ name: "A#/Bb Major" });
+    else if (selections.type + selections.scale + selections.shape == "minorpentatonic2") {
+        this.setState({ imgSource: require('../img/MinorPent/Shape2.png') });
+        this.setState({ name: "Minor Pentatonic Shape Two" });
     }
-    else if (selections.note + selections.type == "BMajor") {
-        this.setState({ imgSource: require('../img/Major/B.png') });
-        this.setState({ name: "B Major" });
+    else if (selections.type + selections.scale + selections.shape == "minorpentatonic3") {
+        this.setState({ imgSource: require('../img/MinorPent/Shape3.png') });
+        this.setState({ name: "Minor Pentatonic Shape Three" });
     }
-    else if (selections.note + selections.type == "CMajor") {
-        this.setState({ imgSource: require('../img/Major/C.png') });
-        this.setState({ name: "C Major" });
+    else if (selections.type + selections.scale + selections.shape == "minorpentatonic4") {
+        this.setState({ imgSource: require('../img/MinorPent/Shape4.png') });
+        this.setState({ name: "Minor Pentatonic Shape Four" });
     }
-    else if (selections.note + selections.type == "DbMajor") {
-        this.setState({ imgSource: require('../img/Major/Db.png') });
-        this.setState({ name: "C#/Db Major" });
+    else if (selections.type + selections.scale + selections.shape == "minorpentatonic5") {
+        this.setState({ imgSource: require('../img/MinorPent/Shape5.png') });
+        this.setState({ name: "Minor Pentatonic Shape Five" });
     }
-    else if (selections.note + selections.type == "DMajor") {
-        this.setState({ imgSource: require('../img/Major/D.png') });
-        this.setState({ name: "D Major" });
+    else if (selections.type + selections.scale + selections.shape == "minorpentatonicfull") {
+        this.setState({ imgSource: require('../img/MinorPent/FullScale.png') });
+        this.setState({ name: "Minor Pentatonic Full Scale" });
     }
-    else if (selections.note + selections.type == "EbMajor") {
-        this.setState({ imgSource: require('../img/Major/Eb.png') });
-        this.setState({ name: "D#/Eb Major" });
+    else if (selections.type + selections.scale + selections.shape == "majorpentatonic1") {
+        this.setState({ imgSource: require('../img/MajorPent/Shape1.png') });
+        this.setState({ name: "Major Pentatonic Shape 1" });
     }
-    else if (selections.note + selections.type == "EMajor") {
-        this.setState({ imgSource: require('../img/Major/E.png') });
-        this.setState({ name: "E Major" });
+    else if (selections.type + selections.scale + selections.shape == "majorpentatonic2") {
+        this.setState({ imgSource: require('../img/MajorPent/Shape2.png') });
+        this.setState({ name: "Major Pentatonic Shape 2" });
     }
-    else if (selections.note + selections.type == "FMajor") {
-        this.setState({ imgSource: require('../img/Major/F.png') });
-        this.setState({ name: "F Major" });
+    else if (selections.type + selections.scale + selections.shape == "majorpentatonic3") {
+        this.setState({ imgSource: require('../img/MajorPent/Shape3.png') });
+        this.setState({ name: "Major Pentatonic Shape 3" });
     }
-    else if (selections.note + selections.type == "GbMajor") {
-        this.setState({ imgSource: require('../img/Major/Gb.png') });
-        this.setState({ name: "F#/Gb Major" });
+    else if (selections.type + selections.scale + selections.shape == "majorpentatonic4") {
+        this.setState({ imgSource: require('../img/MajorPent/Shape4.png') });
+        this.setState({ name: "Major Pentatonic Shape 4" });
     }
-    else if (selections.note + selections.type == "GMajor") {
-        this.setState({ imgSource: require('../img/Major/G.png') });
-        this.setState({ name: "G Major" });
+    else if (selections.type + selections.scale + selections.shape == "majorpentatonic5") {
+        this.setState({ imgSource: require('../img/MajorPent/Shape5.png') });
+        this.setState({ name: "Major Pentatonic Shape 5" });
     }
     else if (selections.note + selections.type == "AbMajor") {
         this.setState({ imgSource: require('../img/Major/Ab.png') });
@@ -145,24 +145,23 @@ class Chords extends React.Component {
     }
 
   }
-
 render(){
   const { options, selections } = this.state;
 
   return (
       <View style={styles.container}>
-        <Text style={styles.logo}>Chords</Text>
+        <Text style={styles.logo}>Scales</Text>
         <View style={styles.textContainer}>
           <Text style={styles.text}>{this.state.name}</Text>
         </View>
         <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={this.state.imgSource} />
+            <Image
+              style={styles.image}
+              source={this.state.imgSource}/>
         </View>
         <TouchableOpacity  onPress={this.showPicker}
           style={styles.Button}>
-          <Text style={styles.buttonText}>Chord Selector</Text>
+          <Text style={styles.buttonText}>Scale Selector</Text>
         </TouchableOpacity>
         <SegmentedPicker
             ref={this.segmentedPicker}
@@ -223,16 +222,16 @@ text:{
   color:"#000000",
 },
 imageContainer:{
-  height:300,
-  width:310,
+  height:310,
+  width:350,
   backgroundColor:"white",
   justifyContent:"center",
 },
 image:{
-  width:300,
+  width:350,
   height:300,
   backgroundColor:"white",
 }
 });
 
-export default Chords;
+export default Scales;
