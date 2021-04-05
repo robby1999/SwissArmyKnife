@@ -20,6 +20,7 @@ class Scales extends React.Component {
                 key: 'scale',
                 items: [
                     { label: 'Pentatonic', value: 'pentatonic' },
+                    { label: 'Blues', value: 'blues' },
                 ],
             },
             {
@@ -91,45 +92,45 @@ class Scales extends React.Component {
         this.setState({ imgSource: require('../img/MajorPent/Shape5.png') });
         this.setState({ name: "Major Pentatonic Shape 5" });
     }
-    else if (selections.note + selections.type == "AbMajor") {
-        this.setState({ imgSource: require('../img/Major/Ab.png') });
-        this.setState({ name: "G#/Ab Major" });
+    else if (selections.type + selections.scale + selections.shape == "minorblues1") {
+        this.setState({ imgSource: require('../img/MinorBlues/Shape1.png') });
+        this.setState({ name: "Minor Blues Shape One" });
     }
-    else if (selections.note + selections.type == "AMinor") {
-        this.setState({ imgSource: require('../img/Minor/Am.png') });
-        this.setState({ name: "A Minor" });
+    else if (selections.type + selections.scale + selections.shape == "minorblues2") {
+        this.setState({ imgSource: require('../img/MinorBlues/Shape2.png') });
+        this.setState({ name: "Minor Blues Shape Two" });
     }
-    else if (selections.note + selections.type == "BbMinor") {
-        this.setState({ imgSource: require('../img/Minor/Bbm.png') });
-        this.setState({ name: "A#/Bb Minor" });
+    else if (selections.type + selections.scale + selections.shape == "minorblues3") {
+        this.setState({ imgSource: require('../img/MinorBlues/Shape3.png') });
+        this.setState({ name: "Minor Blues Shape Three" });
     }
-    else if (selections.note + selections.type == "BMinor") {
-        this.setState({ imgSource: require('../img/Minor/Bm.png') });
-        this.setState({ name: "B Minor" });
+    else if (selections.type + selections.scale + selections.shape == "minorblues4") {
+        this.setState({ imgSource: require('../img/MinorBlues/Shape4.png') });
+        this.setState({ name: "Minor Blues Shape Four" });
     }
-    else if (selections.note + selections.type == "CMinor") {
-        this.setState({ imgSource: require('../img/Minor/Cm.png') });
-        this.setState({ name: "C Minor" });
+    else if (selections.type + selections.scale + selections.shape == "minorblues5") {
+        this.setState({ imgSource: require('../img/MinorBlues/Shape5.png') });
+        this.setState({ name: "Minor Blues Shape Five" });
     }
-    else if (selections.note + selections.type == "DbMinor") {
-        this.setState({ imgSource: require('../img/Minor/Dbm.png') });
-        this.setState({ name: "C#/Db Minor" });
+    else if (selections.type + selections.scale + selections.shape == "majorblues1") {
+        this.setState({ imgSource: require('../img/MajorBlues/Shape1.png') });
+        this.setState({ name: "Major Blues Shape One" });
     }
-    else if (selections.note + selections.type == "DMinor") {
-        this.setState({ imgSource: require('../img/Minor/Dm.png') });
-        this.setState({ name: "D Minor" });
+    else if (selections.type + selections.scale + selections.shape == "majorblues2") {
+        this.setState({ imgSource: require('../img/MajorBlues/Shape2.png') });
+        this.setState({ name: "Major Blues Shape Two" });
     }
-    else if (selections.note + selections.type == "EbMinor") {
-        this.setState({ imgSource: require('../img/Minor/Ebm.png') });
-        this.setState({ name: "D#/Eb Minor" });
+    else if (selections.type + selections.scale + selections.shape == "majorblues3") {
+        this.setState({ imgSource: require('../img/MajorBlues/Shape3.png') });
+        this.setState({ name: "Major Blues Shape Three" });
     }
-    else if (selections.note + selections.type == "EMinor") {
-        this.setState({ imgSource: require('../img/Minor/Em.png') });
-        this.setState({ name: "E Minor" });
+    else if (selections.type + selections.scale + selections.shape == "majorblues4") {
+        this.setState({ imgSource: require('../img/MajorBlues/Shape4.png') });
+        this.setState({ name: "Major Blues Shape Four" });
     }
-    else if (selections.note + selections.type == "FMinor") {
-        this.setState({ imgSource: require('../img/Minor/Fm.png') });
-        this.setState({ name: "F Minor" });
+    else if (selections.type + selections.scale + selections.shape == "majorblues5") {
+        this.setState({ imgSource: require('../img/MajorBlues/Shape5.png') });
+        this.setState({ name: "Major Blues Shape Five" });
     }
     else if (selections.note + selections.type == "GbMinor") {
         this.setState({ imgSource: require('../img/Minor/Gbm.png') });
@@ -212,7 +213,7 @@ buttonText:{
 },
 textContainer:{
   backgroundColor:"white",
-  width:310,
+  width:350,
 },
 text:{
   fontSize: 20,
