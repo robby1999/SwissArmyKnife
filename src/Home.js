@@ -6,7 +6,7 @@ class Home extends React.Component {
 render(){
   return (
       <View style={styles.container}>
-        <Text style={styles.logo}>Guitar Swiss Army knife</Text>
+        <Text style={styles.logo}>Guitar Swiss Army Knife</Text>
         <TouchableOpacity  onPress={ () => this.props.navigation.navigate('Tuner')}
           style={styles.Button}>
           <Text style={styles.buttonText}>Tuner</Text>
@@ -42,7 +42,7 @@ container: {
 logo:{
   fontWeight:"bold",
   fontSize: 40,
-  color:"#000000",
+  color:"#ffffff",
   marginBottom: 40,
   alignItems: 'center',
   textAlign: 'center',
@@ -58,7 +58,7 @@ Button:{
   marginBottom:10
 },
 buttonText:{
-  color:"white",
+  color:"#000000",
   fontWeight:"bold",
 }
 });

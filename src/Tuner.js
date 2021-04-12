@@ -6,34 +6,10 @@ class Tuner extends Component {
 
     constructor(props) {
         super(props);
+        this.audioPlayer = new Audio.Sound();
         this.state = {
             note: " ",
         };
-
-    }
-
-    lowEToggle= () => {
-        this.setState({ note: 1 });
-    }
-
-    aToggle= () => {
-        this.setState({ note: 2 });
-    }
-
-    dToggle= () => {
-        this.setState({ note: 3 });
-    }
-
-    gToggle= () => {
-        this.setState({ note: 4 });
-    }
-
-    bToggle= () => {
-        this.setState({ note: 5 });
-    }
-
-    highEToggle= () => {
-        this.setState({ note: 6 });
     }
 
     async componentDidMount() {
@@ -45,104 +21,138 @@ class Tuner extends Component {
         });
     }
 
-    playSound = async () => {
-      const sound = new Audio.Sound();
-      // Determine what sound to play
-      switch(this.state.note) {
-        case 1 :
-            try {
-                await sound.loadAsync(require('../sounds/lowE.wav'));
-                await sound.playAsync();
-                this.sound.setPositionAsync(0);
-                await sound.unloadAsync();
-            } catch (error) {
-                // Error occurred
-            }
-        case 2 :
-            try {
-                await sound.loadAsync(require('../sounds/A.wav'));
-                await sound.playAsync();
-                this.sound.setPositionAsync(0);
-                await sound.unloadAsync();
-            } catch (error) {
-                // Error occurred
-            }
-        case 3 :
-            try {
-                await sound.loadAsync(require('../sounds/D.wav'));
-                await sound.playAsync();
-                this.sound.setPositionAsync(0);
-                await sound.unloadAsync();
-            } catch (error) {
-                // Error occurred
-            }
-        case 4 :
-            try {
-                await sound.loadAsync(require('../sounds/G.wav'));
-                await sound.playAsync();
-                this.sound.setPositionAsync(0);
-                await sound.unloadAsync();
-            } catch (error) {
-                // Error occurred
-            }
-        case 5 :
-            try {
-                await sound.loadAsync(require('../sounds/B.wav'));
-                await sound.playAsync();
-                this.sound.setPositionAsync(0);
-                await sound.unloadAsync();
-            } catch (error) {
-                // Error occurred
-            }
-        case 6 :
-            try {
-                await sound.loadAsync(require('../sounds/highE.wav'));
-                await sound.playAsync();
-                this.sound.setPositionAsync(0);
-                await sound.unloadAsync();
-            } catch (error) {
-                // Error occurred
-            }
-      }
+    lowEToggle = async () => {
+        try {
+            this.audioPlayer.setOnPlaybackStatusUpdate((status) => {
+                if (!status.didJustFinish) return;
+                this.audioPlayer.unloadAsync();
+            });
+            this.audioPlayer.unloadAsync();
+            await this.audioPlayer.loadAsync(require('../sounds/lowE.wav'));
+            await this.audioPlayer.playAsync();
+            //this.audioPlayer.setPositionAsync(0);
+        } catch (error) {
+            // Error occurred
+            console.log("Error loading sound");
+        }
+    }
+
+    aToggle = async () => {
+        try {
+            this.audioPlayer.setOnPlaybackStatusUpdate((status) => {
+                if (!status.didJustFinish) return;
+                this.audioPlayer.unloadAsync();
+            });
+            this.audioPlayer.unloadAsync();
+            await this.audioPlayer.loadAsync(require('../sounds/A.wav'));
+            await this.audioPlayer.playAsync();
+            this.audioPlayer.setPositionAsync(0);
+        } catch (error) {
+            // Error occurred
+            console.log("Error loading sound");
+        }
+    }
+
+    dToggle = async () => {
+        try {
+            this.audioPlayer.setOnPlaybackStatusUpdate((status) => {
+                if (!status.didJustFinish) return;
+                this.audioPlayer.unloadAsync();
+            });
+            this.audioPlayer.unloadAsync();
+            await this.audioPlayer.loadAsync(require('../sounds/D.wav'));
+            await this.audioPlayer.playAsync();
+            this.audioPlayer.setPositionAsync(0);
+        } catch (error) {
+            // Error occurred
+            console.log("Error loading sound");
+        }
+    }
+
+    gToggle = async () => {
+        try {
+            this.audioPlayer.setOnPlaybackStatusUpdate((status) => {
+                if (!status.didJustFinish) return;
+                this.audioPlayer.unloadAsync();
+            });
+            this.audioPlayer.unloadAsync();
+            await this.audioPlayer.loadAsync(require('../sounds/G.wav'));
+            await this.audioPlayer.playAsync();
+            this.audioPlayer.setPositionAsync(0);
+        } catch (error) {
+            // Error occurred
+            console.log("Error loading sound");
+        }
+    }
+
+    bToggle = async () => {
+        try {
+            this.audioPlayer.setOnPlaybackStatusUpdate((status) => {
+                if (!status.didJustFinish) return;
+                this.audioPlayer.unloadAsync();
+            });
+            this.audioPlayer.unloadAsync();
+            await this.audioPlayer.loadAsync(require('../sounds/B.wav'));
+            await this.audioPlayer.playAsync();
+            this.audioPlayer.setPositionAsync(0);
+        } catch (error) {
+            // Error occurred
+            console.log("Error loading sound");
+        }
+    }
+
+    highEToggle = async () => {
+        try {
+            this.audioPlayer.setOnPlaybackStatusUpdate((status) => {
+                if (!status.didJustFinish) return;
+                this.audioPlayer.unloadAsync();
+            });
+            this.audioPlayer.unloadAsync();
+            await this.audioPlayer.loadAsync(require('../sounds/highE.wav'));
+            await this.audioPlayer.playAsync();
+            this.audioPlayer.setPositionAsync(0);
+        } catch (error) {
+            // Error occurred
+            console.log("Error loading sound");
+        }
+    }
+
+    goHome = async () => {
+        this.audioPlayer.unloadAsync();
+        this.props.navigation.goBack()
     }
 
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.logo}>Tuner</Text>
-                <TouchableOpacity onPressIn={this.lowEToggle}
-                    onPress={this.playSound}
+                <TouchableOpacity onPress={this.lowEToggle}
                     style={styles.LowEButton}>
                     <Text style={styles.buttonText}>Low E</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPressIn={this.aToggle}
-                    onPress={this.playSound}
+                <TouchableOpacity onPress={this.aToggle}
                     style={styles.AButton}>
                     <Text style={styles.buttonText}>A</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPressIn={this.dToggle}
-                    onPress={this.playSound}
+                <TouchableOpacity onPress={this.dToggle}
                     style={styles.DButton}>
-                    <Text style={styles.buttonText}>D</Text>
+                    <Text style={styles.buttonText2}>D</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPressIn={this.gToggle}
-                    onPress={this.playSound}
+                <TouchableOpacity onPress={this.gToggle}
                     style={styles.GButton}>
                     <Text style={styles.buttonText}>G</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPressIn={this.bToggle}
-                    onPress={this.playSound}
+                <TouchableOpacity onPress={this.bToggle}
                     style={styles.BButton}>
                     <Text style={styles.buttonText}>B</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPressIn={this.highEToggle}
-                    onPress={this.playSound}
+                <TouchableOpacity onPress={this.highEToggle}
                     style={styles.HighEButton}>
-                    <Text style={styles.buttonText}>High E</Text>
+                    <Text style={styles.buttonText2}>High E</Text>
                 </TouchableOpacity>
-                <TouchableOpacity  onPress={ () => this.props.navigation.goBack()}
+                <TouchableOpacity  onPress={this.goHome}
                     style={styles.Button}>
-                    <Text style={styles.backButtonText}>Back</Text>
+                    <Text style={styles.homeButtonText}>Home</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -162,7 +172,7 @@ container: {
 logo:{
   fontWeight:"bold",
   fontSize: 40,
-  color:"#000000",
+  color:"#ffffff",
   alignItems: 'center',
   paddingTop: 50,
   marginBottom: 50
@@ -232,9 +242,15 @@ HighEButton:{
 buttonText:{
   color:"#000000",
   fontWeight:"bold",
+  fontSize: 16,
 },
-backButtonText:{
-  color:"white",
+buttonText2:{
+  color:"#ffffff",
+  fontWeight:"bold",
+  fontSize: 16,
+},
+homeButtonText:{
+  color:"#000000",
   fontWeight:"bold",
 }
 });

@@ -152,14 +152,10 @@ render(){
   return (
       <View style={styles.container}>
         <Text style={styles.logo}>Chords</Text>
-        <View style={styles.textContainer}>
-          <Text style={styles.text}>{this.state.name}</Text>
-        </View>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={this.state.imgSource} />
-        </View>
+        <Image
+          style={styles.image}
+          resizeMode="contain"
+          source={this.state.imgSource} />
         <TouchableOpacity  onPress={this.showPicker}
           style={styles.Button}>
           <Text style={styles.buttonText}>Chord Selector</Text>
@@ -172,7 +168,7 @@ render(){
         />
         <TouchableOpacity  onPress={ () => this.props.navigation.goBack()}
           style={styles.Button}>
-          <Text style={styles.buttonText}>Back</Text>
+          <Text style={styles.buttonText}>Home</Text>
         </TouchableOpacity>
   </View>
         );
@@ -192,7 +188,7 @@ container: {
 logo:{
   fontWeight:"bold",
   fontSize: 40,
-  color:"#000000",
+  color:"#ffffff",
   marginBottom: 40,
   alignItems: 'center',
   textAlign: 'center',
@@ -208,19 +204,8 @@ Button:{
   marginBottom:10
 },
 buttonText:{
-  color:"white",
-  fontWeight:"bold",
-},
-textContainer:{
-  backgroundColor:"white",
-  width:310,
-},
-text:{
-  fontSize: 20,
-  fontWeight:"bold",
-  textAlign: 'center',
-  margin: 5,
   color:"#000000",
+  fontWeight:"bold",
 },
 imageContainer:{
   height:300,
@@ -229,8 +214,8 @@ imageContainer:{
   justifyContent:"center",
 },
 image:{
-  width:300,
-  height:300,
+  width:350,
+  height:350,
   backgroundColor:"white",
 }
 });

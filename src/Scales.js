@@ -21,6 +21,7 @@ class Scales extends React.Component {
                 items: [
                     { label: 'Pentatonic', value: 'pentatonic' },
                     { label: 'Blues', value: 'blues' },
+                    { label: 'Scale', value: 'scale' },
                 ],
             },
             {
@@ -31,7 +32,6 @@ class Scales extends React.Component {
                     { label: 'Shape 3', value: '3' },
                     { label: 'Shape 4', value: '4' },
                     { label: 'Shape 5', value: '5' },
-                    { label: 'Full Board', value: 'full' },
                 ],
             },
         ],
@@ -67,10 +67,6 @@ class Scales extends React.Component {
     else if (selections.type + selections.scale + selections.shape == "minorpentatonic5") {
         this.setState({ imgSource: require('../img/MinorPent/Shape5.png') });
         this.setState({ name: "Minor Pentatonic Shape Five" });
-    }
-    else if (selections.type + selections.scale + selections.shape == "minorpentatonicfull") {
-        this.setState({ imgSource: require('../img/MinorPent/FullScale.png') });
-        this.setState({ name: "Minor Pentatonic Full Scale" });
     }
     else if (selections.type + selections.scale + selections.shape == "majorpentatonic1") {
         this.setState({ imgSource: require('../img/MajorPent/Shape1.png') });
@@ -132,17 +128,45 @@ class Scales extends React.Component {
         this.setState({ imgSource: require('../img/MajorBlues/Shape5.png') });
         this.setState({ name: "Major Blues Shape Five" });
     }
-    else if (selections.note + selections.type == "GbMinor") {
-        this.setState({ imgSource: require('../img/Minor/Gbm.png') });
-        this.setState({ name: "F#/Gb Minor" });
+    else if (selections.type + selections.scale + selections.shape == "majorscale1") {
+        this.setState({ imgSource: require('../img/MajorScale/Shape1.png') });
+        this.setState({ name: "Major Scale Shape One" });
     }
-    else if (selections.note + selections.type == "GMinor") {
-        this.setState({ imgSource: require('../img/Minor/Gm.png') });
-        this.setState({ name: "G Minor" });
+    else if (selections.type + selections.scale + selections.shape == "majorscale2") {
+        this.setState({ imgSource: require('../img/MajorScale/Shape2.png') });
+        this.setState({ name: "Major Scale Shape Two" });
     }
-    else if (selections.note + selections.type == "AbMinor") {
-        this.setState({ imgSource: require('../img/Minor/Abm.png') });
-        this.setState({ name: "G#/Ab Minor" });
+    else if (selections.type + selections.scale + selections.shape == "majorscale3") {
+        this.setState({ imgSource: require('../img/MajorScale/Shape3.png') });
+        this.setState({ name: "Major Scale Shape Three" });
+    }
+    else if (selections.type + selections.scale + selections.shape == "majorscale4") {
+        this.setState({ imgSource: require('../img/MajorScale/Shape4.png') });
+        this.setState({ name: "Major Scale Shape Four" });
+    }
+    else if (selections.type + selections.scale + selections.shape == "majorscale5") {
+        this.setState({ imgSource: require('../img/MajorScale/Shape5.png') });
+        this.setState({ name: "Major Scale Shape Five" });
+    }
+    else if (selections.type + selections.scale + selections.shape == "minorscale1") {
+        this.setState({ imgSource: require('../img/MinorScale/Shape1.png') });
+        this.setState({ name: "Minor Scale Shape One" });
+    }
+    else if (selections.type + selections.scale + selections.shape == "minorscale2") {
+        this.setState({ imgSource: require('../img/MinorScale/Shape2.png') });
+        this.setState({ name: "Minor Scale Shape Two" });
+    }
+    else if (selections.type + selections.scale + selections.shape == "minorscale3") {
+        this.setState({ imgSource: require('../img/MinorScale/Shape3.png') });
+        this.setState({ name: "Minor Scale Shape Three" });
+    }
+    else if (selections.type + selections.scale + selections.shape == "minorscale4") {
+        this.setState({ imgSource: require('../img/MinorScale/Shape4.png') });
+        this.setState({ name: "Minor Scale Shape Four" });
+    }
+    else if (selections.type + selections.scale + selections.shape == "minorscale5") {
+        this.setState({ imgSource: require('../img/MinorScale/Shape5.png') });
+        this.setState({ name: "Minor Scale Shape Five" });
     }
 
   }
@@ -152,16 +176,28 @@ render(){
   return (
       <View style={styles.container}>
         <Text style={styles.logo}>Scales</Text>
-        <View style={styles.textContainer}>
-          <Text style={styles.text}>{this.state.name}</Text>
-        </View>
-        <View style={styles.imageContainer}>
-            <Image
-              style={styles.image}
-              source={this.state.imgSource}/>
-        </View>
+        <Image
+          style={styles.image}
+          resizeMode="contain"
+          source={this.state.imgSource} />
+        <Text style={styles.text1}>
+          Key:
+        </Text>
+        <Text style={styles.point1}>
+          {'\u2B24'} Root Note
+        </Text>
+        <Text style={styles.point2}>
+          {'\u2B24'} Blues Note
+        </Text>
+        <Text style={styles.text2}>
+          *The numbers represent what fingers to use*
+        </Text>
+        <Text style={styles.text3}>
+          The scales above are all in the key of A. The key of the scales can be changed by
+          simply moving the root note to the note of the key you wish to play in.
+        </Text>
         <TouchableOpacity  onPress={this.showPicker}
-          style={styles.Button}>
+          style={styles.button}>
           <Text style={styles.buttonText}>Scale Selector</Text>
         </TouchableOpacity>
         <SegmentedPicker
@@ -171,8 +207,8 @@ render(){
             defaultSelections={selections}
         />
         <TouchableOpacity  onPress={ () => this.props.navigation.goBack()}
-          style={styles.Button}>
-          <Text style={styles.buttonText}>Back</Text>
+          style={styles.backButton}>
+          <Text style={styles.buttonText}>Home</Text>
         </TouchableOpacity>
   </View>
         );
@@ -192,46 +228,80 @@ container: {
 logo:{
   fontWeight:"bold",
   fontSize: 40,
-  color:"#000000",
-  marginBottom: 40,
+  color:"#ffffff",
+  marginBottom: 20,
+  marginTop: 30,
   alignItems: 'center',
   textAlign: 'center',
 },
-Button:{
+button:{
   width:"85%",
   backgroundColor:"#ff7f17",
   borderRadius:25,
   height:50,
   alignItems:"center",
   justifyContent:"center",
-  marginTop:40,
-  marginBottom:10
+  marginTop:20,
+  marginBottom:30
+},
+backButton:{
+  width:"85%",
+  backgroundColor:"#ff7f17",
+  borderRadius:25,
+  height:50,
+  alignItems:"center",
+  justifyContent:"center",
 },
 buttonText:{
-  color:"white",
+  color:"#000000",
   fontWeight:"bold",
 },
-textContainer:{
+image:{
+  width:325,
+  height:325,
   backgroundColor:"white",
-  width:350,
 },
-text:{
+text1: {
   fontSize: 20,
   fontWeight:"bold",
   textAlign: 'center',
-  margin: 5,
   color:"#000000",
-},
-imageContainer:{
-  height:310,
-  width:350,
   backgroundColor:"white",
-  justifyContent:"center",
+  width:325,
 },
-image:{
-  width:350,
-  height:300,
+text2: {
+  fontSize: 14,
+  fontWeight:"bold",
+  textAlign: 'center',
+  color:"#000000",
   backgroundColor:"white",
+  width:325,
+},
+text3: {
+  fontSize: 14,
+  textAlign: 'center',
+  fontWeight: '500',
+  color:"#000000",
+  backgroundColor:"white",
+  width:325,
+},
+point1: {
+  fontSize: 20,
+  fontWeight:"bold",
+  textAlign: 'center',
+  fontWeight: '500',
+  color:"#D0021B",
+  backgroundColor:"white",
+  width:325,
+},
+point2: {
+  fontSize: 20,
+  fontWeight:"bold",
+  textAlign: 'center',
+  fontWeight: '500',
+  color:"#4A90E2",
+  backgroundColor:"white",
+  width:325,
 }
 });
 

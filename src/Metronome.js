@@ -7,6 +7,7 @@ class Metronome extends Component {
 
     constructor(props) {
         super(props);
+        this.audioPlayer = new Audio.Sound();
         this.state = {
         playing: false,
         count: 0,
@@ -43,23 +44,31 @@ class Metronome extends Component {
 
     playClick = async () => {
       const { count, beatsPerMeasure } = this.state;
-      const sound = new Audio.Sound();
+      //const sound = new Audio.Sound();
       // The first beat will have a different sound than the others
       if(count % beatsPerMeasure === 0) {
         try {
-            await sound.loadAsync(require('../sounds/click2.wav'));
-            await sound.playAsync();
-            this.sound.setPositionAsync(0);
-            await sound.unloadAsync();
+            this.audioPlayer.setOnPlaybackStatusUpdate((status) => {
+                if (!status.didJustFinish) return;
+                this.audioPlayer.unloadAsync();
+            });
+            this.audioPlayer.unloadAsync();
+            await this.audioPlayer.loadAsync(require('../sounds/click2.wav'));
+            await this.audioPlayer.playAsync();
+            this.audioPlayer.setPositionAsync(0);
         } catch (error) {
             // Error occurred
         }
       } else {
         try {
-            await sound.loadAsync(require('../sounds/click1.wav'));
-            await sound.playAsync();
-            this.sound.setPositionAsync(0);
-            await sound.unloadAsync();
+            this.audioPlayer.setOnPlaybackStatusUpdate((status) => {
+                if (!status.didJustFinish) return;
+                this.audioPlayer.unloadAsync();
+            });
+            this.audioPlayer.unloadAsync();
+            await this.audioPlayer.loadAsync(require('../sounds/click1.wav'));
+            await this.audioPlayer.playAsync();
+            this.audioPlayer.setPositionAsync(0);
         } catch (error) {
             // Error occurred
         }
@@ -70,20 +79,14 @@ class Metronome extends Component {
       }));
     }
 
-    handleBpmChange = event => {
-        const newBpm = event.target.value;
-
+    goHome = async () => {
         if(this.state.playing) {
             clearInterval(this.timer);
-            this.timer = setInterval(this.playClick, (60 / newBpm) * 1000);
-
             this.setState({
-                count: 0,
-                bpm: newBpm
+                playing: false
             });
-        } else {
-            this.setState({ bpm: newBpm });
         }
+        this.props.navigation.goBack()
     }
 
     render() {
@@ -97,11 +100,10 @@ class Metronome extends Component {
                         minimumValue={50}
                         maximumValue={250}
                         step={1}
-                        minimumTrackTintColor="#000000"
-                        thumbTintColor="#b9b6bf"
+                        minimumTrackTintColor="#ffffff"
+                        thumbTintColor="#ff7f17"
                         value={this.state.bpm}
                         onValueChange={bpm => this.setState({bpm: bpm})}
-                        //onChange={this.handleBpmChange}
                     />
                     <Text style={styles.text}>{this.state.bpm} BPM</Text>
                 </View>
@@ -109,9 +111,9 @@ class Metronome extends Component {
                   style={styles.Button}>
                   <Text style={styles.buttonText}>{(this.state.playing) ? "Stop" : "Play"}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity  onPress={ () => this.props.navigation.goBack()}
+                <TouchableOpacity  onPress={this.goHome}
                   style={styles.Button}>
-                  <Text style={styles.buttonText}>Back</Text>
+                  <Text style={styles.buttonText}>Home</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -140,12 +142,12 @@ text: {
     textAlign: 'center',
     fontWeight: '500',
     margin: 20,
-    color:"#000000",
+    color:"#ffffff",
 },
 logo:{
   fontWeight:"bold",
   fontSize: 40,
-  color:"#000000",
+  color:"#ffffff",
   marginBottom: 50,
   alignItems: 'center',
 },
@@ -159,7 +161,7 @@ Button:{
   marginBottom:40
 },
 buttonText:{
-  color:"white",
+  color:"#000000",
   fontWeight:"bold",
 }
 });
