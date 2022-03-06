@@ -44,7 +44,6 @@ class Metronome extends Component {
 
     playClick = async () => {
       const { count, beatsPerMeasure } = this.state;
-      //const sound = new Audio.Sound();
       // The first beat will have a different sound than the others
       if(count % beatsPerMeasure === 0) {
         try {
@@ -79,6 +78,7 @@ class Metronome extends Component {
       }));
     }
 
+    // Stops sound playing if home button is pressed
     goHome = async () => {
         if(this.state.playing) {
             clearInterval(this.timer);
@@ -141,7 +141,7 @@ text: {
     fontWeight:"bold",
     textAlign: 'center',
     fontWeight: '500',
-    margin: 20,
+    margin: 10,
     color:"#ffffff",
 },
 logo:{

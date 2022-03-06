@@ -30,7 +30,7 @@ class Tuner extends Component {
             this.audioPlayer.unloadAsync();
             await this.audioPlayer.loadAsync(require('../sounds/lowE.wav'));
             await this.audioPlayer.playAsync();
-            //this.audioPlayer.setPositionAsync(0);
+            this.audioPlayer.setPositionAsync(0);
         } catch (error) {
             // Error occurred
             console.log("Error loading sound");
@@ -117,6 +117,7 @@ class Tuner extends Component {
         }
     }
 
+    // Stops sound playing if home button is pressed
     goHome = async () => {
         this.audioPlayer.unloadAsync();
         this.props.navigation.goBack()

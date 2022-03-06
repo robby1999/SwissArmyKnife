@@ -48,123 +48,123 @@ class Scales extends React.Component {
   onConfirm = (selections: Selections) => {
     this.setState({ selections })
     console.info(selections.type + selections.scale + selections.shape);
-    if (selections.type + selections.scale + selections.shape == "minorpentatonic1") {
+    if (selections.type + selections.scale + selections.shape == "minorPentatonic1") {
         this.setState({ imgSource: require('../img/MinorPent/Shape1.png') });
         this.setState({ name: "Minor Pentatonic Shape One" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorpentatonic2") {
+    else if (selections.type + selections.scale + selections.shape == "minorPentatonic2") {
         this.setState({ imgSource: require('../img/MinorPent/Shape2.png') });
         this.setState({ name: "Minor Pentatonic Shape Two" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorpentatonic3") {
+    else if (selections.type + selections.scale + selections.shape == "minorPentatonic3") {
         this.setState({ imgSource: require('../img/MinorPent/Shape3.png') });
         this.setState({ name: "Minor Pentatonic Shape Three" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorpentatonic4") {
+    else if (selections.type + selections.scale + selections.shape == "minorPentatonic4") {
         this.setState({ imgSource: require('../img/MinorPent/Shape4.png') });
         this.setState({ name: "Minor Pentatonic Shape Four" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorpentatonic5") {
+    else if (selections.type + selections.scale + selections.shape == "minorPentatonic5") {
         this.setState({ imgSource: require('../img/MinorPent/Shape5.png') });
         this.setState({ name: "Minor Pentatonic Shape Five" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorpentatonic1") {
+    else if (selections.type + selections.scale + selections.shape == "majorPentatonic1") {
         this.setState({ imgSource: require('../img/MajorPent/Shape1.png') });
         this.setState({ name: "Major Pentatonic Shape 1" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorpentatonic2") {
+    else if (selections.type + selections.scale + selections.shape == "majorPentatonic2") {
         this.setState({ imgSource: require('../img/MajorPent/Shape2.png') });
         this.setState({ name: "Major Pentatonic Shape 2" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorpentatonic3") {
+    else if (selections.type + selections.scale + selections.shape == "majorPentatonic3") {
         this.setState({ imgSource: require('../img/MajorPent/Shape3.png') });
         this.setState({ name: "Major Pentatonic Shape 3" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorpentatonic4") {
+    else if (selections.type + selections.scale + selections.shape == "majorPentatonic4") {
         this.setState({ imgSource: require('../img/MajorPent/Shape4.png') });
         this.setState({ name: "Major Pentatonic Shape 4" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorpentatonic5") {
+    else if (selections.type + selections.scale + selections.shape == "majorPentatonic5") {
         this.setState({ imgSource: require('../img/MajorPent/Shape5.png') });
         this.setState({ name: "Major Pentatonic Shape 5" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorblues1") {
+    else if (selections.type + selections.scale + selections.shape == "minorBlues1") {
         this.setState({ imgSource: require('../img/MinorBlues/Shape1.png') });
         this.setState({ name: "Minor Blues Shape One" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorblues2") {
+    else if (selections.type + selections.scale + selections.shape == "minorBlues2") {
         this.setState({ imgSource: require('../img/MinorBlues/Shape2.png') });
         this.setState({ name: "Minor Blues Shape Two" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorblues3") {
+    else if (selections.type + selections.scale + selections.shape == "minorBlues3") {
         this.setState({ imgSource: require('../img/MinorBlues/Shape3.png') });
         this.setState({ name: "Minor Blues Shape Three" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorblues4") {
+    else if (selections.type + selections.scale + selections.shape == "minorBlues4") {
         this.setState({ imgSource: require('../img/MinorBlues/Shape4.png') });
         this.setState({ name: "Minor Blues Shape Four" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorblues5") {
+    else if (selections.type + selections.scale + selections.shape == "minorBlues5") {
         this.setState({ imgSource: require('../img/MinorBlues/Shape5.png') });
         this.setState({ name: "Minor Blues Shape Five" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorblues1") {
+    else if (selections.type + selections.scale + selections.shape == "majorBlues1") {
         this.setState({ imgSource: require('../img/MajorBlues/Shape1.png') });
         this.setState({ name: "Major Blues Shape One" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorblues2") {
+    else if (selections.type + selections.scale + selections.shape == "majorBlues2") {
         this.setState({ imgSource: require('../img/MajorBlues/Shape2.png') });
         this.setState({ name: "Major Blues Shape Two" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorblues3") {
+    else if (selections.type + selections.scale + selections.shape == "majorBlues3") {
         this.setState({ imgSource: require('../img/MajorBlues/Shape3.png') });
         this.setState({ name: "Major Blues Shape Three" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorblues4") {
+    else if (selections.type + selections.scale + selections.shape == "majorBlues4") {
         this.setState({ imgSource: require('../img/MajorBlues/Shape4.png') });
         this.setState({ name: "Major Blues Shape Four" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorblues5") {
+    else if (selections.type + selections.scale + selections.shape == "majorBlues5") {
         this.setState({ imgSource: require('../img/MajorBlues/Shape5.png') });
         this.setState({ name: "Major Blues Shape Five" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorscale1") {
+    else if (selections.type + selections.scale + selections.shape == "majorScale1") {
         this.setState({ imgSource: require('../img/MajorScale/Shape1.png') });
         this.setState({ name: "Major Scale Shape One" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorscale2") {
+    else if (selections.type + selections.scale + selections.shape == "majorScale2") {
         this.setState({ imgSource: require('../img/MajorScale/Shape2.png') });
         this.setState({ name: "Major Scale Shape Two" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorscale3") {
+    else if (selections.type + selections.scale + selections.shape == "majorScale3") {
         this.setState({ imgSource: require('../img/MajorScale/Shape3.png') });
         this.setState({ name: "Major Scale Shape Three" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorscale4") {
+    else if (selections.type + selections.scale + selections.shape == "majorScale4") {
         this.setState({ imgSource: require('../img/MajorScale/Shape4.png') });
         this.setState({ name: "Major Scale Shape Four" });
     }
-    else if (selections.type + selections.scale + selections.shape == "majorscale5") {
+    else if (selections.type + selections.scale + selections.shape == "majorScale5") {
         this.setState({ imgSource: require('../img/MajorScale/Shape5.png') });
         this.setState({ name: "Major Scale Shape Five" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorscale1") {
+    else if (selections.type + selections.scale + selections.shape == "minorScale1") {
         this.setState({ imgSource: require('../img/MinorScale/Shape1.png') });
         this.setState({ name: "Minor Scale Shape One" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorscale2") {
+    else if (selections.type + selections.scale + selections.shape == "minorScale2") {
         this.setState({ imgSource: require('../img/MinorScale/Shape2.png') });
         this.setState({ name: "Minor Scale Shape Two" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorscale3") {
+    else if (selections.type + selections.scale + selections.shape == "minorScale3") {
         this.setState({ imgSource: require('../img/MinorScale/Shape3.png') });
         this.setState({ name: "Minor Scale Shape Three" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorscale4") {
+    else if (selections.type + selections.scale + selections.shape == "minorScale4") {
         this.setState({ imgSource: require('../img/MinorScale/Shape4.png') });
         this.setState({ name: "Minor Scale Shape Four" });
     }
-    else if (selections.type + selections.scale + selections.shape == "minorscale5") {
+    else if (selections.type + selections.scale + selections.shape == "minorScale5") {
         this.setState({ imgSource: require('../img/MinorScale/Shape5.png') });
         this.setState({ name: "Minor Scale Shape Five" });
     }
